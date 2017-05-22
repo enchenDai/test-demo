@@ -1,0 +1,137 @@
+.sidenav {
+    //width: 200px;
+    //max-width: 200px;
+    //min-width: 200px;
+    .nav-header {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 74px;
+        background-color: #114d6f;
+        .nav-portrait {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            img {
+                width: 35px;
+                height: 35px;
+            }
+            span {
+                font-size: 20px;
+                padding-left: 10px;
+            }
+        }
+    }
+    md-content {
+        ul.menu-list {
+            margin: 0;
+        }
+    }
+}
+
+.sidenav {
+    background-color: #003750;
+    .hidden {
+        display: none;
+    }
+    .menu-list {
+
+        padding: 0;
+        list-style: none;
+        li {
+
+        }
+        .icon {
+            height: 16px;
+            width: 16px;
+        }
+        .nacha-icon {
+            height: 14px;
+            width: 14px;
+        }
+        .nav-feedback {
+            margin-left: 2px;
+            width: 13px;
+        }
+        .title {
+            margin-left: 20px;
+        }
+        a.md-button {
+            border-radius: 0;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: block;
+            align-items: inherit;
+            line-height: 40px;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            overflow: hidden;
+            text-align: left;
+            text-decoration: none;
+            white-space: normal;
+            padding-left: 42px;
+        }
+        a.md-button.active {
+            background-color: #1b7dac;
+        }
+        .sub-menu-list {
+            padding: 0;
+            .md-button {
+                border-radius: 0;
+                color: #FFFFFF;
+                cursor: pointer;
+                display: block;
+                align-items: inherit;
+                line-height: 40px;
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                overflow: hidden;
+                text-align: left;
+                text-decoration: none;
+                white-space: normal;
+                padding-left: 20px;
+                text-transform: none;
+            }
+            .sub-menu {
+                md-icon {
+                    color: #FFFFFF;
+                    display: block;
+                    margin-left: auto;
+                    speak: none;
+                    vertical-align: middle;
+                }
+                md-icon.arrow {
+                    transform: rotate(180deg);
+                    transition: transform 0.3s ease-in-out;
+                }
+                md-icon.toggled {
+                    transform: rotate(0deg);
+                }
+                .sub-menu-item {
+                    transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+                    .title {
+                        margin-left: 40px;
+                    }
+                }
+            }
+            .sub-menu.active {
+                background-color: #1b7dac;
+            }
+        }
+    }
+}
+
+.lang-class-zh_cnSideBar {
+    width: 200px;
+}
+.lang-class-enSideBar {
+    width: 330px;
+}
+.lang-class-msSideBar {
+    width: 380px;
+}

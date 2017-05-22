@@ -1,0 +1,161 @@
+.selector-box-modal {
+    background-color: #f1f1f1;
+    .chosen-drop {
+        display: none;
+        z-index: 1;
+    }
+    .bar-header {
+        .title {
+            color: #444;
+            font-weight: normal;
+            font-size: 15px;
+        }
+        .city-ok {
+            font-size: 0.9em;
+            color: #4c4c4c;
+            position: absolute;
+            right: 7px;
+            top: 10px !important;
+        }
+
+    }
+    .approval-content {
+        background-color: #fff !important;
+        top: 180px !important;
+        .approval-chain {
+            display: flex;
+            margin: 0;
+            .user-item {
+                display: flex;
+                flex-direction: column;
+                margin: 5px 4px 5px 10px;
+                .level {
+                    white-space: nowrap;
+                }
+                .user-info {
+                    display: flex;
+                    white-space: nowrap;
+                    .user-fullname {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    p {
+                        margin: 0 !important;
+                    }
+                    i.ion.ion-ios-arrow-thin-right {
+                        font-size: 29px;
+                        color: #cdcdcd;
+                        margin-top: -1px;
+                        position: relative;
+                        margin-left: 7px;
+                    }
+
+                }
+            }
+            .user-item:last-child {
+                i {
+                    display: none;
+                }
+            }
+
+        }
+        .user-result-item {
+            padding: 10px;
+            height: 60px;
+            margin: 0;
+            border-bottom: 1px solid #e2e2e2;
+            background-color: #fff;
+            .user-full-name {
+                font-size: 16px;
+                line-height: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 5px;
+                white-space: nowrap;
+            }
+            .department-info {
+                text-align: right;
+                color: #666666;
+                font-size: 13px;
+                .user-title, .user-dep {
+                    margin: 0;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 100%;
+                    white-space: nowrap;
+                    word-break: keep-all;
+                }
+            }
+        }
+    }
+}
+
+.selector-box-dialog{
+    .warn-toast{
+        position: absolute;
+        left:0;
+        right: 0;
+        top:0;
+        bottom:0;
+        margin: auto;
+    }
+    .select-dialog-container {
+        width: 600px;
+        padding-top: 5px;
+        .search-container {
+            padding-left: 30px;
+            height: 50px;
+            max-height: 50px;
+        }
+        .repeat-parent-container {
+            height: 310px;
+        }
+        .repeat-container {
+            border-top: 1px solid #cdcddc;
+        }
+        md-checkbox {
+            margin: 0 0 0 30px;
+        }
+    }
+
+    .repeat-div {
+        margin: 8px;
+    }
+    .member-item.text-center {
+        display: flex;
+        justify-content: center;
+    }
+    img.arrow-checked.ng-scope {
+        width: 16px;
+    }
+    button.md-icon-button.md-button.md-ink-ripple {
+        min-width: 100px;
+    }
+    .repeat-div {
+        margin: 5px;
+    }
+    .text-center.member-fullname {
+        text-align: center;
+    }
+    .approval-selector-toast{
+        position: absolute;
+        top:0;
+        bottom:0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .no-data{
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #4c4c4c;
+    }
+    .visible-true{
+        visibility: visible;
+    }
+    .visible-false{
+        visibility: hidden;
+    }
+}

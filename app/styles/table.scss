@@ -1,0 +1,161 @@
+﻿.deepblue-admin {
+    .md-table-holder {
+        margin: 0px;
+        padding: 0px;
+
+        .md-table {
+            border-collapse: collapse;
+            margin: 0 0 0 20px;
+
+
+            .md-table-headers-row {
+                border: 1px solid #DBDBDB;
+                .checkbox-batch {
+                    width: 2%;
+                    background-color: #EBEBEB;
+                }
+                .checkbox-batch.visibility-hidden {
+                    visibility: visible;
+                }
+                .md-table-header {
+
+                    color: #757575;
+                    text-align: center;
+                    font-size: 1.0em;
+                    font-weight: 700;
+                    padding: 15px 0px 15px 0px;
+                    background-color: #EBEBEB;
+                }
+
+                .md-table-header a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+            .md-table-content-row {
+                border: 1px solid #DBDBDB;
+                margin-top: -1px;
+            }
+
+            .md-table-content-row:hover {
+                cursor: pointer;
+                background-color: #c1ebff;
+            }
+
+            // .md-table-content-row-odd {
+            //     background-color: #f1f1f1;
+            // }
+            //
+            // .md-table-content-row-even {
+            //     background-color: #ffffff;
+            // }
+
+            .md-table-content-row-empty:hover {
+            }
+            .text-align-center {
+                text-align: center;
+            }
+            .visibility-hidden {
+                visibility: hidden;
+            }
+            .text-align-right {
+                text-align: right;
+            }
+            .md-table-content:focus {
+                outline: 0;
+            }
+            .md-table-content {
+                padding: 8px 0px;
+                color: #444444;
+                text-align: center;
+                font-size: 1.0em;
+                font-weight: 500;
+                height: 20px;
+                outline: none;
+                .md-operation {
+                    color: dodgerblue;
+                }
+                img{
+                    max-height:20px;
+                    min-height:10px;
+                    max-width:20px;
+                    min-width:10px;
+                }
+            }
+            .checkbox-operation {
+                margin: 0 0;
+                padding: 0 0;
+                width: 21px;
+            }
+            md-checkbox .md-container:after {
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+        }
+
+        .md-table-footer {
+            padding: 32px 32px 8px;
+            .md-button[disabled="disabled"],
+            .md-button[disabled="disabled"]:hover {
+                background-color: #FFFFFF;
+                color: #D4D4D4;
+                border: 1px solid #FFFFFF;
+            }
+            .md-table-footer-item {
+                width: 40px;
+                height: 40px;
+                vertical-align: middle;
+            }
+
+            .md-first-last-button {
+                min-width: 32px;
+                color: gray;
+                font-size: 1.0em;
+            }
+
+            .md-previus-next-button {
+                min-width: 32px;
+
+                .md-chevron-left {
+                    position: relative;
+                    top: 7px;
+                    content: url(../images/page_left.png);
+                }
+
+                .md-chevron-right {
+                    position: relative;
+                    top: 7px;
+                    content: url(../images/page_right.png);
+                }
+            }
+
+            .md-pages-button {
+                min-height:32px;
+                min-width:32px;
+                height: 32px;
+                width: 32px;
+                padding: 0px;
+                background-color: white;
+                color: gray;
+                font-size: 1.0em;
+
+                .md-page {
+                    align-self:center;
+                    position: relative;
+                    top: -10px;
+                }
+
+                .md-table-active-page {
+                    font-weight: 900;
+                    color: white;
+                }
+            }
+
+            .md-table-active-page-button {
+                background-color: dodgerblue;
+            }
+        }
+    }
+}

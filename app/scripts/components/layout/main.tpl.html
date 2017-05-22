@@ -1,0 +1,10 @@
+<md-toolbar class="md-whiteframe-glow-z1 nav-header admin-header" ui-view="topNav" ng-cloak></md-toolbar>
+
+<div role="main" layout="row" layout-fill class="main" ng-cloak>
+    <md-sidenav class="sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left"
+                md-is-locked-open="true" ui-view="sideNav">
+    </md-sidenav>
+    <md-content class="layout-content main-container anim-in-out anim-fade ng-cloak"
+                md-scroll-y layout="column" flex ui-view="content" data-anim-speed="200">
+    </md-content>
+</div>

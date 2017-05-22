@@ -1,0 +1,24 @@
+﻿<md-button class="md-raised md-primary md-button-toggle"
+           ng-click="toggle(section)"
+           aria-controls="docs-menu-{{section.name}}"
+           aria-expanded="{{isOpen(section)}}"
+           ss-style-color="{'background-color': isSelected(section.state) ? '#1b7dac': '#003750'}"
+    >
+    <div flex layout="row">
+        <md-icon ng-if="section.icon" md-svg-src="{{section.icon}}" class="icon"></md-icon>
+        <span class="caption" ss-style-color="{'color': isSelected(section.state) ? '#fff': '#698491'}">{{section.name}}</span>
+        <span flex></span>
+        <span aria-hidden="true" class="md-toggle-icon" ng-class="{'toggled' : isOpen(section)}">
+           <md-icon md-svg-src="md-toggle-arrow"></md-icon>
+       </span>
+    </div>
+    <span class="md-visually-hidden">
+       Toggle {{isOpen(section)? 'expanded' : 'collapsed'}}
+   </span>
+</md-button>
+
+<ul id="docs-menu-{{section.name}}" class="menu-toggle-list">
+    <li ng-repeat="page in section.pages" ng-if="!page.hidden">
+        <menu-link section="page"></menu-link>
+    </li>
+</ul>

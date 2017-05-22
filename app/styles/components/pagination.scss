@@ -1,0 +1,11 @@
+pagination {
+    width: 100%;
+    .pagination {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .button {
+            min-width: 0;
+        }
+    }
+}

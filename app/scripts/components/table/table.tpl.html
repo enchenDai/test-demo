@@ -1,0 +1,61 @@
+﻿<div class="md-table-holder">
+    <!--<div>{{tableDataSource.content}}</div>-->
+    <table md-colresize="md-colresize" class="md-table">
+        <thead>
+            <tr class="md-table-headers-row">
+                <th class="checkbox-batch" ng-class="{true:'visibility-hidden',false:''}[!selectAll]">
+                    <md-checkbox aria-label="a" class="md-primary checkbox-operation" ng-if="selectAll" ng-click="selectCurrentPage()">
+                    </md-checkbox>
+                </th>
+                <th ng-repeat="h in headers" class="md-table-header">
+                    <span layout="row" layout-align="{{h.align || 'center center'}}">{{h.name}}</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="c in getCurrentContent() track by $index"
+            ng-class="{true:'md-table-content-row-empty',false:'md-table-content-row'}[c=='empty']"
+            ng-class-odd="'md-table-content-row-odd'"
+            ng-class-even="'md-table-content-row-even'"
+                ng-attr-ng-click="c!='empty' ? rowClick({record:c}) : undefined">
+            <td class="text-align-center" ng-click="checkboxClick({event:$event,item:c})">
+                <md-checkbox aria-label="a" class="md-primary checkbox-operation"
+                             ng-class="{true:'visibility-hidden',false:''}[!c.checkboxEnabled]"
+                             ng-checked="exists({item:c})"
+                             ng-click="checkboxClick({event:$event,item:c})">
+                </md-checkbox>
+            </td>
+                <td ng-repeat="h in headers" ng-class="customClass[h.field]" class="md-table-content" style="{{h.style}}" ng-click="h.isButton === true ? columnClick({item: c ,field: h.field}) : null">
+                    <div ng-if="!h.isButton && (!h.operation.action && c!='empty')" layout="row" layout-align="{{h.align || 'center center'}}"><img ng-show="h.showImage" ng-src="{{h.showImage(c[h.field])}}" />{{h.field ? show(h,c[h.field]) : undefined}}</div>
+                    <div class="md-operation" ng-show="c!='empty' && h.operation.action" ng-attr-ng-click="c!='empty' && h.operation.action ? applyEvent($event,h.operation.action,c) : undefined">{{h.show ? show(h,c[h.operation.field]) : h.operation.name}}</div>
+                    <div ng-if="h.isButton" style="{{h.buttonStyle}}">
+                        {{h.field ? show(h,c[h.field]) : undefined}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div layout="row" layout-align="center center" layout-wrap class="md-table-footer">
+        <md-button ng-disabled="tablePage==0" ng-click="goToPage(0)" class="md-first-last-button">
+            <!--首页-->
+            {{ "pagenation.firstPage" | translate}}
+        </md-button>
+        <md-button ng-disabled="tablePage==0" ng-click="goToPage(tablePage-1)" aria-label="Previous Page" class="md-previus-next-button">
+            <i class="md-chevron-left"></i>
+        </md-button>
+        <span ng-if="hasFooterPrefixEllipsis">...</span>
+        <span ng-repeat="index in footerIndices">
+            <md-button ng-click="goToPage(index)" class="md-fab md-pages-button" ng-class="{ 'md-table-active-page-button': tablePage==index}">
+                <span class="md-page" ng-class="{ 'md-table-active-page': tablePage==index}">{{index+1}}</span>
+            </md-button>
+        </span>
+        <span ng-if="hasFooterPostfixEllipsis">...</span>
+        <md-button ng-disabled="tablePage == nbOfPages() - 1" ng-click="goToPage(tablePage + 1)" aria-label="Next Page" class="md-previus-next-button">
+            <i class="md-chevron-right"></i>
+        </md-button>
+        <md-button ng-disabled="tablePage == nbOfPages() - 1" ng-click="goToPage(nbOfPages()-1)" class="md-first-last-button">
+            <!--末页-->
+            {{ "pagenation.lastPage" | translate}}
+        </md-button>
+    </div>
+</div>

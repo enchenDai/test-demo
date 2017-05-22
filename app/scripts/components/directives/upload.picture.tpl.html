@@ -1,0 +1,19 @@
+<div class="" layout="row">
+    <!-- onclick must be added. Because the same file upload twice will be ignored without this function.-->
+    <input id="pic_uploader" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/bpm" style="display:none" custom-on-change="view.uploadImage" onclick="this.value = null;"
+           ngf-resize="{width: 200, height: 200}" multiple />
+    <div class="col image-list" ng-repeat="pic in attachmentSrc">
+        <div ng-if="!pic.isDeleted">
+            <!--<img ng-src="{{pic.thumbnailUrl}}" class="selected-pic"/>-->
+            <img ng-src="{{pic.thumbnailUrl}}" class="selected-pic"/>
+            <!--<span class="progress-bar" ng-if="uploadFinish"></span>-->
+            <span ng-click="view.deleteImage($index)" ng-class="{true: 'delete-icon', false: 'delete-icon-bar'}[uploadFinish]">
+                <img src="images/expense/delete-icon.png" alt="">
+            </span>
+        </div>
+    </div>
+    <div ng-if="attachmentSrc.length < maxLength">
+        <img src="images/expense/add-pic.png" class="selected-pic" alt="" onclick="document.getElementById('pic_uploader').click()">
+    </div>
+</div>
+

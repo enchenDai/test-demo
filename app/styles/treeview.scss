@@ -1,0 +1,84 @@
+﻿treecontrol {
+    /* prevent user selection */
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #555;
+    text-decoration: none;
+}
+
+treecontrol ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    overflow: hidden;
+}
+
+treecontrol ul li {
+    margin: 0;
+    padding: 0;
+    display: list-item;
+    line-height: 40px;
+}
+
+treecontrol li.tree-expanded i.tree-leaf-head, treecontrol li.tree-collapsed i.tree-leaf-head {
+    display: none;
+}
+
+treecontrol li.tree-expanded i.tree-branch-head, treecontrol li.tree-collapsed i.tree-branch-head {
+    display: inline;
+}
+
+treecontrol li.tree-leaf i.tree-branch-head {
+    display: none;
+}
+
+treecontrol li.tree-leaf i.tree-leaf-head {
+    display: inline;
+}
+
+treecontrol li i.tree-branch-head {
+    cursor: pointer;
+}
+
+treecontrol li .tree-label {
+    cursor: pointer;
+    display: inline;
+}
+
+treecontrol li .tree-unselectable {
+    cursor: not-allowed;
+}
+
+treecontrol li.tree-expanded i.tree-branch-head {
+    width: 24px;
+    height: 24px;
+    padding: 5px 13px;
+    background: url("../images/tree_expanded.png") no-repeat center center;
+}
+
+treecontrol li.tree-collapsed i.tree-branch-head {
+    width: 24px;
+    height: 24px;
+    padding: 5px 13px;
+    background: url("../images/tree_collapsed.png") no-repeat center center;
+}
+
+treecontrol li.tree-leaf i.tree-leaf-head {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: none no-repeat;
+}
+
+treecontrol li .tree-selected {
+    font-weight: bold;
+    background: #ebebeb;
+}
+
+treecontrol li .tree-unselectable {
+    color: #ddd;
+}

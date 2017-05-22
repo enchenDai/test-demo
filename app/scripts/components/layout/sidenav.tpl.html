@@ -1,0 +1,618 @@
+﻿<md-content flex role="navigation" ss-style-color="{'background-color': '#003750'}" class="flex">
+    <ul class="menu-list">
+        side
+    </ul>
+    <!--<ul class="menu-list">-->
+        <!--&lt;!&ndash;报销单菜单&ndash;&gt;-->
+        <!--<ul class="sub-menu-list" ng-hide="functionProfile[FunctionProfileFiledList['er.main.disabled']]">-->
+            <!--<md-button class="md-ink-ripple sub-menu"-->
+                       <!--ng-class="{'active': isExpenseReportActive()}"-->
+                       <!--ng-click="view.expenseReport = !view.expenseReport">-->
+                <!--<div flex layout="row">-->
+                    <!--<md-icon class="icon" md-svg-src="images/sidenav/expense.report.white.svg"></md-icon>-->
+                    <!--&lt;!&ndash;报销单&ndash;&gt;-->
+                    <!--<span class="title">{{"directives.layout.sidenav.expenseAccount" | translate}}</span>-->
+                    <!--<span flex></span>-->
+                    <!--<md-icon class="arrow" md-svg-src="md-toggle-arrow"-->
+                             <!--ng-class="{'toggled': view.expenseReport}"></md-icon>-->
+                <!--</div>-->
+            <!--</md-button>-->
+            <!--<li class="sub-menu-item" ng-show="view.expenseReport">-->
+                <!--<a class="md-button md-ink-ripple"-->
+                   <!--ui-sref="site.app.invoice_list"-->
+                   <!--ng-class="{'active': includeState('site.app.invoice_list')||includeState('site.app.invoice_list_select')|| includeState('site.app.expense_create') || includeState('site.app.expense_edit') || includeState('site.app.expense_partially_edit') || includeState('site.app.expense_readonly')}"-->
+                   <!--ng-hide="functionProfile['account.book.disabled']">-->
+                    <!--<div flex layout="row">-->
+                        <!--&lt;!&ndash;账本&ndash;&gt;-->
+                        <!--<span class="title">{{"directives.layout.sidenav.accountBook" | translate}}</span>-->
+                        <!--<span flex></span>-->
+                    <!--</div>-->
+                <!--</a>-->
+                <!--<a class="md-button md-ink-ripple"-->
+                   <!--ui-sref="site.app.expense_report_my"-->
+                   <!--ng-class="{'active': includeState('site.app.expense_report_my') || includeState('site.app.expense_report_detail_view') || includeState('site.app.expense_report_detail_passed')-->
+                   <!--|| includeState('site.app.expense_report_detail_submit') || includeState('site.app.expense_report_base') || includeState('site.app.expense_report_travel_base') || includeState('site.app.expense_report_invoice_base')-->
+                   <!--|| includeState('site.app.expense_report_next') || includeState('site.app.expense_report_travel_next') || includeState('site.app.expense_report_invoice_next')-->
+                   <!--|| includeState('site.app.expense_report_normal') || includeState('site.app.expense_report_withdraw') || includeState('site.app.expense_report_approval_reject')-->
+                   <!--|| includeState('site.app.expense_report_audit_reject') || includeState('site.app.custom_expense_report_base')-->
+                   <!--|| includeState('site.app.custom_expense_report_next')}"-->
+                   <!--ng-hide="functionProfile['er.disabled']">-->
+                    <!--<div flex layout="row">-->
+                        <!--&lt;!&ndash;我的报销&ndash;&gt;-->
+                        <!--<span class="title">{{"directives.layout.sidenav.MyReimburse" | translate}}</span>-->
+                        <!--<span flex></span>-->
+                    <!--</div>-->
+                <!--</a>-->
+                <!--<a class="md-button md-ink-ripple"-->
+                   <!--ui-sref="site.app.borrow_money_list"-->
+                   <!--ng-class="{'active': includeState('site.app.borrow_money_list')}"-->
+                   <!--ng-hide="functionProfile['loan.flow.disabled']">-->
+                    <!--<div flex layout="row">-->
+                        <!--&lt;!&ndash;借款及还款&ndash;&gt;-->
+                        <!--<span class="title">-->
+                           <!--{{"directives.layout.sidenav.borrowing" | translate}}-->
+                        <!--</span>-->
+                        <!--<span flex></span>-->
+                    <!--</div>-->
+                <!--</a>-->
+                <!--&lt;!&ndash;<a class="md-button md-ink-ripple"&ndash;&gt;-->
+                <!--&lt;!&ndash;ui-sref="site.app.expense_report_approval"&ndash;&gt;-->
+                <!--&lt;!&ndash;ng-class="{'active': includeState('site.app.expense_report_approval') || includeState('site.app.expense_report_detail_approve')}">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div flex layout="row">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span class="title">报销审批</span>&ndash;&gt;-->
+                <!--&lt;!&ndash;<span flex></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--</li>-->
+        <!--</ul>-->
+
+        <!--&lt;!&ndash;申请单菜单&ndash;&gt;-->
+        <!--<ul class="sub-menu-list" ng-hide="functionProfile[FunctionProfileFiledList['ca.web.disabled']]">-->
+            <!--<md-button class="md-ink-ripple sub-menu"-->
+                       <!--ng-class="{'active': isApplicationApplyActive()}"-->
+                       <!--ng-click="view.application = !view.application"-->
+                       <!--ui-sref="site.app.application_list">-->
+                <!--<div flex layout="row">-->
+                    <!--<md-icon class="icon" md-svg-src="images/sidenav/application-white.svg"></md-icon>-->
+                    <!--&lt;!&ndash;申请单&ndash;&gt;-->
+                    <!--<span class="title">{{"directives.layout.sidenav.requestNote" | translate}}</span>-->
+                    <!--<span flex></span>-->
+                <!--</div>-->
+            <!--</md-button>-->
+        <!--</ul>-->
+
+        <!--&lt;!&ndash;订票专员菜单&ndash;&gt;-->
+        <!--<ul class="sub-menu-list" ng-show="hasAnyAuthority(['ROLE_COMPANY_BOOK']) && !functionProfile['booker.disabled']">-->
+            <!--<md-button class="md-ink-ripple sub-menu"-->
+                       <!--ng-class="{'active': isBookerActive()}"-->
+                       <!--ng-click="view.booker = !view.booker"-->
+                       <!--ui-sref="site.app.booker_list">-->
+                <!--<div flex layout="row">-->
+                    <!--<md-icon class="icon" md-svg-src="images/sidenav/booker-blue.svg"></md-icon>-->
+                    <!--&lt;!&ndash;订票专员&ndash;&gt;-->
+                    <!--<span class="title">{{"directives.layout.sidenav.reserveCommissioner" | translate}}</span>-->
+                    <!--<span flex></span>-->
+                <!--</div>-->
+            <!--</md-button>-->
+        <!--</ul>-->
+
+        <!--&lt;!&ndash;审批菜单&ndash;&gt;-->
+        <!--<ul class="sub-menu-list" ng-hide="functionProfile[FunctionProfileFiledList['approval.web.disabled']]">-->
+            <!--<md-button class="md-ink-ripple sub-menu"-->
+                       <!--ng-class="{'active': isApprovalActive()}"-->
+                       <!--ng-click="view.approval = !view.approval">-->
+                <!--<div flex layout="row">-->
+                    <!--<md-icon class="icon" md-svg-src="images/sidenav/approval-white.svg"></md-icon>-->
+                    <!--&lt;!&ndash;审批&ndash;&gt;-->
+                    <!--<span class="title">{{"directives.layout.sidenav.accraditation" | translate}}</span>-->
+                    <!--<span flex></span>-->
+                    <!--<md-icon class="arrow" md-svg-src="md-toggle-arrow"-->
+                             <!--ng-class="{'toggled': view.approval}"></md-icon>-->
+                <!--</div>-->
+            <!--</md-button>-->
+            <!--<li class="sub-menu-item" ng-show="view.approval">-->
+                <!--<a class="md-button md-ink-ripple"-->
+                   <!--ui-sref="site.app.expense_report_approval"-->
+                   <!--ng-class="{'active': includeState('site.app.expense_report_approval') || includeState('site.app.expense_report_detail_approve')}"-->
+                   <!--ng-hide="functionProfile[FunctionProfileFiledList['approval.web.disabled']] || functionProfile['er.opt.approval.disabled']">-->
+                    <!--<div flex layout="row">-->
+                        <!--&lt;!&ndash;报销单审批&ndash;&gt;-->
+                        <!--<span class="title">{{"directives.layout.sidenav.reimburseAccraditation" | translate}}</span>-->
+                        <!--<span flex></span>-->
+                    <!--</div>-->
+                <!--</a>-->
+                <!--<a class="md-button md-ink-ripple"-->
+                   <!--ui-sref="site.app.application_report_approval"-->
+                   <!--ng-class="{'active': includeState('site.app.application_report_approval') || includeState('site.app.invoice_apply_approval') || includeState('site.app.travel_approver') || includeState('site.app.custom_application_approver')}"-->
+                   <!--ng-hide="functionProfile[FunctionProfileFiledList['approval.web.disabled']] || functionProfile[FunctionProfileFiledList['ca.opt.approval.web.disabled']]">-->
+                    <!--<div flex layout="row">-->
+                        <!--&lt;!&ndash;申请单审批&ndash;&gt;-->
+                        <!--<span class="title">{{"directives.layout.sidenav.requestAccraditation" | translate}}</span>-->
+                        <!--<span flex></span>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash;报表&ndash;&gt;-->
+        <!--<ul class="sub-menu-list" ng-hide="functionProfile['web.report.disabled'] || reportList.length === 0">-->
+            <!--<md-button class="md-ink-ripple sub-menu"-->
+                       <!--ng-class="{'active': isReportActive()}"-->
+                       <!--ng-click="view.report = !view.report">-->
+                <!--<div flex layout="row">-->
+                    <!--<md-icon class="icon" md-svg-src="images/sidenav/report.svg"></md-icon>-->
+                    <!--<span class="title">-->
+                        <!--&lt;!&ndash;报表&ndash;&gt;-->
+                        <!--{{"directives.layout.sidenav.statement"|translate}}-->
+                    <!--</span>-->
+                    <!--<span flex></span>-->
+                    <!--<md-icon class="arrow" md-svg-src="md-toggle-arrow"-->
+                             <!--ng-class="{'toggled': view.report}"></md-icon>-->
+                <!--</div>-->
+            <!--</md-button>-->
+            <!--<li class="sub-menu-item" ng-show="view.report">-->
+                <!--<a class="md-button md-ink-ripple" ng-repeat="report in reportList"-->
+                   <!--ng-click="goToReport($index, report.reportLineOID)"-->
+                   <!--ng-class="{'active': $index == selectReportIndex && isReportActive()}"-->
+                   <!--ng-hide="functionProfile['web.report.disabled'] || functionProfile['web.report.expense.report.disabled']">-->
+                    <!--<div flex layout="row">-->
+                        <!--<span class="title">-->
+                            <!--{{report.copyName}}-->
+                        <!--</span>-->
+                        <!--<span flex></span>-->
+                    <!--</div>-->
+                <!--</a>-->
+                <!--&lt;!&ndash;<a class="md-button md-ink-ripple"&ndash;&gt;-->
+                   <!--&lt;!&ndash;ui-sref="site.app.report_air_fly_expense"&ndash;&gt;-->
+                   <!--&lt;!&ndash;ng-class="{'active': includeState('site.app.report_air_fly_expense')}"&ndash;&gt;-->
+                   <!--&lt;!&ndash;ng-hide="functionProfile['web.report.disabled'] || functionProfile['web.report.airfly.report.disabled']">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div flex layout="row">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span class="title">&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;机票费用报表&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;{{"directives.layout.sidenav.expense_airTicket_statement"|translate}}&ndash;&gt;-->
+                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span flex></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a class="md-button md-ink-ripple"&ndash;&gt;-->
+                   <!--&lt;!&ndash;ui-sref="site.app.report_invoice"&ndash;&gt;-->
+                   <!--&lt;!&ndash;ng-class="{'active': includeState('site.app.report_invoice')}"&ndash;&gt;-->
+                   <!--&lt;!&ndash;ng-hide="functionProfile['web.report.disabled'] || functionProfile['web.report.invoice.disabled']">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div flex layout="row">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span class="title">&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;费用报表&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;{{"directives.layout.sidenav.fee_statement"|translate}}&ndash;&gt;-->
+                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span flex></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--</li>-->
+        <!--</ul>-->
+
+        <!--&lt;!&ndash;<ul class="sub-menu-list">&ndash;&gt;-->
+        <!--&lt;!&ndash;<md-button class="md-ink-ripple sub-menu">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div flex layout="row" ui-sref="site.app.application_list">&ndash;&gt;-->
+        <!--&lt;!&ndash;<md-icon class="icon" md-svg-src="images/sidenav/approval-white.svg"></md-icon>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="title">审批</span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span flex></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</md-button>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;设置菜单&ndash;&gt;-->
+        <!--<li ng-show="hasAnyAuthority(['ROLE_COMPANY_ADMIN']) && !functionProfile['settings.disabled']">-->
+            <!--<ul class="sub-menu-list">-->
+                <!--<md-button class="md-ink-ripple sub-menu"-->
+                           <!--ng-class="{'active': isSettingsActive()}"-->
+                           <!--ng-click="checkstatus()">-->
+                    <!--&lt;!&ndash;ng-click="view.settings = !view.settings">&ndash;&gt;-->
+                    <!--<div flex layout="row">-->
+                        <!--<md-icon class="icon" md-svg-src="images/sidenav/settings.white.svg"></md-icon>-->
+                        <!--<span class="title">{{'sidenav.settings' | translate}}</span>-->
+                        <!--<span flex></span>-->
+                        <!--<md-icon class="arrow" md-svg-src="md-toggle-arrow"-->
+                                 <!--ng-class="{'toggled': view.settings}"></md-icon>-->
+                    <!--</div>-->
+                <!--</md-button>-->
+                <!--<li class="sub-menu-item" ng-show="view.settings">-->
+                    <!--&lt;!&ndash;<a class="md-button md-ink-ripple"&ndash;&gt;-->
+                       <!--&lt;!&ndash;ui-sref="site.app.approval_start"&ndash;&gt;-->
+                       <!--&lt;!&ndash;ng-class="{'active': includeState('site.app.approval_start') || includeState('site.app.approval_flow_list') || includeState('site.app.approval_flow_create') || includeState('site.app.approval_flow_edit')}">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div flex layout="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="title">&ndash;&gt;-->
+                                <!--&lt;!&ndash;&lt;!&ndash;审批设置&ndash;&gt;&ndash;&gt;-->
+                                <!--&lt;!&ndash;{{"directives.layout.sidenav.approval_settings" | translate}}&ndash;&gt;-->
+                            <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span flex></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.settings.categories"-->
+                       <!--ng-class="{'active': includeState('site.app.settings.categories') || includeState('site.app.settings.create_category')}"-->
+                       <!--ng-hide="functionProfile['settings.expenseTypeManage.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;费用类别&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.costType" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.settings.agency_list"-->
+                       <!--ng-class="{'active': includeState('site.app.settings.agency_list') || includeState('site.app.settings.agency_create')}"-->
+                       <!--ng-hide="functionProfile['settings.agency.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;代理设置&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.agency"|translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.settings.currency.list"-->
+                       <!--ng-class="{'active': includeState('site.app.settings.currency.list') || includeState('site.app.settings.currency.detail')}"-->
+                       <!--ng-hide="functionProfile['settings.currency.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--<span class="title">-->
+                                <!--&lt;!&ndash;币种设计&ndash;&gt;-->
+                                <!--{{"directives.layout.sidenav.currency" | translate}}-->
+                            <!--</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.budget"-->
+                       <!--ui-sref-active="active"-->
+                       <!--ng-hide="functionProfile['settings.budget.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--<span class="title">-->
+                                <!--&lt;!&ndash;预算控制&ndash;&gt;-->
+                                <!--{{"directives.layout.sidenav.budget" | translate}}-->
+                            <!--</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--&lt;!&ndash;老的值列表&ndash;&gt;-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.custom_value_list"-->
+                       <!--ng-class="{'active': includeState('site.app.custom_value_detail') || includeState('site.app.custom_value_list')}"-->
+                       <!--ng-if="functionProfile['settings.valueList.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;值列表管理&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.listManage" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--&lt;!&ndash;新的值列表管理:web.new.custom.setting.disabled&ndash;&gt;-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.settings.custom_value_setting"-->
+                       <!--ng-class="{'active': includeState('site.app.settings.custom_value_setting') || includeState('site.app.settings.system_value_list')|| includeState('site.app.settings.custom_value_list')-->
+                       <!--|| includeState('site.app.settings.custom_create') || includeState('site.app.settings.system_edit') || includeState('site.app.settings.custom_next') || includeState('site.app.settings.system_next')}"-->
+                       <!--ng-if="!functionProfile['web.new.custom.setting.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;值列表管理&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.listManage" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.settings.carousel_list"-->
+                       <!--ng-class="{'active': includeState('site.app.settings.carousel_list') || includeState('site.app.settings.carousel_create')}"-->
+                       <!--ng-hide="functionProfile['settings.carouselList.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;公告信息&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.afficheMessage" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.finance_list"-->
+                       <!--ng-class="{'active': includeState('site.app.finance_list') ||-->
+                                            <!--includeState('site.app.finance_authorization_list')||-->
+                                            <!--includeState('site.app.finance_authorization_edit') ||-->
+                                            <!--includeState('site.app.setting_finance_role_list') ||-->
+                                            <!--includeState('site.app.setting_finance_role_detail') ||-->
+                                            <!--includeState('site.app.finance_role_user_edit')}"-->
+                       <!--ng-hide="functionProfile['settings.authority.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--<span class="title">-->
+                                <!--&lt;!&ndash;权限设置&ndash;&gt;-->
+                                <!--{{"directives.layout.sidenav.permission" | translate}}-->
+                            <!--</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.settings.supplier_manage"-->
+                       <!--ng-class="{'active': includeState('site.app.settings.supplier_manage')}"-->
+                       <!--ng-hide="functionProfile['settings.supplier.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;供应商管理&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.supplierAccount" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                        <!--ui-sref="site.app.cost_center"-->
+                        <!--ng-class="{'active': includeState('site.app.cost_center') || includeState('site.app.cost_center_create') || includeState('site.app.cost_center_edit') || includeState('site.app.cost_center_item_create') || includeState('site.app.cost_center_item_edit')}"-->
+                        <!--ng-hide="functionProfile['settings.costCenter.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;成本中心&ndash;&gt;-->
+                        <!--<span class="title">{{"directives.layout.sidenav.costCenter" | translate}}</span>-->
+                        <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.travel_standard_list"-->
+                       <!--ng-class="{'active': includeState('site.app.travel_standard_list') || includeState('site.app.travel_standard_detail') || includeState('site.app.travel_standard_create') || includeState('site.app.travel_standard_update') || includeState('site.app.travel_standard_copy')}"-->
+                       <!--ng-hide="functionProfile['settings.travelStandard.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;差旅标准&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.touristStandard" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.settings.group.list"-->
+                       <!--ng-class="{'active': includeState('site.app.settings.group.list') || includeState('site.app.settings.group.create')}"-->
+                       <!--ng-hide="functionProfile['settings.group.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;人员组&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.personnelGroup" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.city_level"-->
+                       <!--ng-class="{'active': includeState('site.app.city_level')}"-->
+                       <!--ng-hide="functionProfile['settings.cityLevel.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;城市级别&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.cityRank" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.form_design_container"-->
+                       <!--ng-class="{'active': includeState('site.app.form_design_container') || includeState('site.app.form_list') || includeState('site.app.form_design_create') || includeState('site.app.form_design_edit') || includeState('site.app.settings.categories') || includeState('site.app.settings.create_category')}"-->
+                       <!--ng-hide="functionProfile['settings.formDesign.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;表单设计器&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.formDesginContainer" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ng-if="!functionProfile['private.car.for.public.disabled']"-->
+                       <!--ui-sref="site.app.private_car_for_public_list"-->
+                       <!--ng-class="{'active': includeState('site.app.private_car_for_public_list') || includeState('site.app.private_car_for_public_create') || includeState('site.app.private_car_for_public_detail')}">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;私车公用&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.privateCarPublic" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple" ui-sref="site.app.approval_form_list" ng-if="!functionProfile['settings.approval.chain.disabled']"-->
+                        <!--ng-class="{'active': includeState('site.app.approval_form_list') || includeState('site.app.approval_detail')}">-->
+                        <!--<div flex layout="row">-->
+                            <!--<span class="title">-->
+                                <!--&lt;!&ndash;审批流&ndash;&gt;-->
+                                <!--{{"directives.layout.sidenav.approval_process"|translate}}-->
+                            <!--</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</li>-->
+        <!--&lt;!&ndash;报表分配&ndash;&gt;-->
+        <!--<ul class="sub-menu-list"-->
+            <!--ng-hide="!hasAnyAuthority(['ROLE_COMPANY_FINANCE_ADMIN']) || functionProfile['web.report.setting.disabled']">-->
+            <!--<md-button class="md-ink-ripple sub-menu"-->
+                       <!--ng-class="{'active': isReportSettingActive()}"-->
+                       <!--ui-sref="site.app.report_setting_list">-->
+                <!--<div flex layout="row">-->
+                    <!--<md-icon class="icon" md-svg-src="images/sidenav/report_setting.svg"></md-icon>-->
+                    <!--&lt;!&ndash;申请单&ndash;&gt;-->
+                    <!--<span class="title">-->
+                        <!--&lt;!&ndash;报表分配&ndash;&gt;-->
+                        <!--{{"directives.layout.sidenav.report_settings" | translate}}-->
+                    <!--</span>-->
+                    <!--<span flex></span>-->
+                <!--</div>-->
+            <!--</md-button>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash;企业管理菜单&ndash;&gt;-->
+        <!--<li ng-show="hasAnyAuthority(['ROLE_COMPANY_ADMIN']) && !functionProfile['companyManage.disabled']">-->
+            <!--<ul class="sub-menu-list">-->
+                <!--<md-button class="md-ink-ripple sub-menu"-->
+                           <!--ng-class="{'active': isCompanyStructureActive()}"-->
+                           <!--ng-click="view.company = !view.company"-->
+                           <!--ui-sref="site.app.company_manage">-->
+                    <!--<div flex layout="row">-->
+                        <!--<md-icon class="icon" md-svg-src="images/sidenav/company.management.white.svg"></md-icon>-->
+                        <!--&lt;!&ndash;企业管理&ndash;&gt;-->
+                        <!--<span class="title">{{"directives.layout.sidenav.businessManagement" | translate}}</span>-->
+                        <!--<span flex></span>-->
+                        <!--<md-icon class="arrow" md-svg-src="md-toggle-arrow"-->
+                                 <!--ng-class="{'toggled': view.company}"></md-icon>-->
+                    <!--</div>-->
+                <!--</md-button>-->
+                <!--<li class="sub-menu-item" ng-show="view.company">-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.company_employee_list"-->
+                       <!--ng-class="{'active': includeState('site.app.company_employee_list') || includeState('site.app.company_employee_detail') || includeState('site.app.employee_detail_manage') || includeState('site.app.employee_create_manage')}"-->
+                       <!--ng-hide="functionProfile['companyManage.employee.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;员工管理&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.employeeMangement" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--&lt;!&ndash;<a class="md-button md-ink-ripple"&ndash;&gt;-->
+                    <!--&lt;!&ndash;ui-sref="site.app.userManagement.infrastructure.list"&ndash;&gt;-->
+                    <!--&lt;!&ndash;ui-sref-active="active">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div flex layout="row">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<span class="title">组织架构</span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<span flex></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.organization_management({reset: true})"-->
+                       <!--ui-sref-active="active"-->
+                       <!--ng-class="{'active': includeState('site.app.organization_management')}"-->
+                       <!--ng-hide="functionProfile['companyManage.organization.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;组织架构&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.organizationChart" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.company_invoice"-->
+                       <!--ng-class="{'active': includeState('site.app.company_invoice') || includeState('site.app.company_invoice_detail') || includeState('site.app.legal_detail')}"-->
+                       <!--ng-hide="functionProfile['companyManage.legalEntity.disabled']">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;法人实体&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.legalEntity" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</li>-->
+        <!--&lt;!&ndash;财务管理菜单&ndash;&gt;-->
+        <!--&lt;!&ndash;pageRoles['FINANCEMANAGEMENT'].action > 0  财务 财务管理 只读/操作 权限&ndash;&gt;-->
+        <!--<li ng-show="!functionProfile['finance.disabled'] && pageRoles['FINANCEMANAGEMENT'].action > 0">-->
+            <!--<ul class="sub-menu-list">-->
+                <!--<md-button class="md-ink-ripple sub-menu"-->
+                           <!--ng-class="{'active': isFinanceManagementActive()}"-->
+                           <!--ng-click="view.finance = !view.finance"-->
+                           <!--ui-sref="site.app.fm_dashboard">-->
+                    <!--<div flex layout="row">-->
+                        <!--<md-icon class="icon" md-svg-src="images/sidenav/finance.management.white.svg"></md-icon>-->
+                        <!--&lt;!&ndash;财务管理&ndash;&gt;-->
+                        <!--<span class="title">{{"directives.layout.sidenav.financialManagement" | translate}}</span>-->
+                        <!--<span flex></span>-->
+                        <!--<md-icon class="arrow" md-svg-src="md-toggle-arrow"-->
+                                 <!--ng-class="{'toggled': view.finance}"></md-icon>-->
+                    <!--</div>-->
+                <!--</md-button>-->
+                <!--&lt;!&ndash;单据审核 functionprofile:web.financial.approval.wait.audit.disabled&ndash;&gt;-->
+                <!--&lt;!&ndash;pageRoles['EXPENSEAUDIT'].action > 0  财务 单据审核 只读/操作 权限&ndash;&gt;-->
+                <!--<li class="sub-menu-item" ng-show="view.finance &&-->
+                                                  <!--!functionProfile['web.financial.approval.wait.audit.disabled'] &&-->
+                                                   <!--pageRoles['EXPENSEAUDIT'].action > 0">-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.financial_approval_expense_audit"-->
+                       <!--ng-class="{'active': includeState('site.app.financial_approval_expense_audit') || includeState('site.app.expense_report_audit') ||-->
+                       <!--includeState('site.app.expense_report_detail_audit')|| includeState('site.app.expense_readonly')||includeState('site.app.custom_application_detail')-->
+                        <!--|| includeState('site.app.expense_report_qrcode')}">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;单据审核&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.documentsReview" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--&lt;!&ndash;ui-sref="site.app.company_receipted_invoice_list"&ndash;&gt;-->
+                <!--&lt;!&ndash;pageRoles['RECEIPTEDINVOICES'].action > 0  财务 待开票 只读/操作 权限&ndash;&gt;-->
+                <!--<li class="sub-menu-item" ng-show="view.finance &&-->
+                                                   <!--!functionProfile['web.finance.wait.receipted'] &&-->
+                                                   <!--pageRoles['RECEIPTEDINVOICES'].action > 0">-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.company_receipted_invoice_platform"-->
+                       <!--ng-class="{'active': includeState('site.app.company_receipted_invoice_list') || includeState('site.app.company_receipted_invoice_detail') || includeState('site.app.company_receipted_invoice_create') || includeState('site.app.company_receipted_invoice_platform') || includeState('site.app.jingdong_receipted_invoice_list') || includeState('site.app.jingdong_receipted_invoice_create') || includeState('site.app.jingdong_receipted_invoice_waitApproval') || includeState('site.app.jingdong_receipted_invoice_approvalReject') || includeState('site.app.jingdong_receipted_invoice_waitApprovalSuccess') || includeState('site.app.jingdong_receipted_invoice_someApprovalSuccess') || includeState('site.app.jingdong_receipted_invoice_allApprovalSuccess') || includeState('site.app.jingdong_application_detail')}">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;待开票&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.waitReceipted" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--&lt;!&ndash;确认付款function profile:web.financial.approval.sure.payment.disabled&ndash;&gt;-->
+                <!--&lt;!&ndash;pageRoles['EXPENSEPAYMENT'].action > 0  财务 确认付款 只读/操作 权限&ndash;&gt;-->
+                <!--<li class="sub-menu-item" ng-show="view.finance &&-->
+                                                   <!--!functionProfile['web.financial.approval.sure.payment.disabled'] &&-->
+                                                   <!--pageRoles['EXPENSEPAYMENT'].action > 0">-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.financial_approval_expense_payment"-->
+                       <!--ng-class="{'active':includeState('site.app.financial_approval_expense_payment') || includeState('site.app.expense_report_payment')}">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;确认付款&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.confirmPayment" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--&lt;!&ndash;<li class="sub-menu-item" ng-show="view.finance && !functionProfile['finance.approval.disabled']">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a class="md-button md-ink-ripple"&ndash;&gt;-->
+                       <!--&lt;!&ndash;ui-sref="site.app.fm_dashboard"&ndash;&gt;-->
+                       <!--&lt;!&ndash;ng-class="{'active': includeState('site.app.fm_dashboard') || includeState('site.app.expense_report_detail_audit') || includeState('site.app.expense_report_audit') || includeState('site.app.payment_batch_list') || includeState('site.app.expense_report_payment') || includeState('site.app.expense_report_qrcode')}">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div flex layout="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;报销审核&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="title">{{"directives.layout.sidenav.reportForDeletionAudit" | translate}}</span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span flex></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;pageRoles['LOANMANAGEMENT'].action > 0  财务 借还款管理 只读/操作 权限&ndash;&gt;-->
+                <!--<li class="sub-menu-item" ng-show="view.finance &&-->
+                                                   <!--!functionProfile['finance.loan.repayment.disabled'] &&-->
+                                                   <!--pageRoles['LOANMANAGEMENT'].action > 0">-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.loan_management_container"-->
+                       <!--ng-class="{'active': includeState('site.app.loan_management_container') || includeState('site.app.finance_loan_list') ||includeState('site.app.finance_overall_list') || includeState('site.app.finance_repayment_list')-->
+                       <!--|| includeState('site.app.finance_overall_sub_list') || includeState('site.app.custom_application_finance') || includeState('site.app.writeoff_history_finance') || includeState('site.app.refund_transfer_finance') || includeState('site.app.refund_transfer_detail') || includeState('site.app.expense_report_detail_view') || includeState('site.app.refund_transfer_withdraw')}">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;借还款管理&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.lendsReimbursementManagement" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--&lt;!&ndash;pageRoles['PAYMENTBATCH'].action > 0  财务 付款批次 只读/操作 权限&ndash;&gt;-->
+                <!--<li class="sub-menu-item" ng-show="view.finance &&-->
+                                                   <!--!functionProfile['finance.batch.disabled'] &&-->
+                                                   <!--pageRoles['PAYMENTBATCH'].action > 0">-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.finance_payment_batch"-->
+                       <!--ng-class="{'active': includeState('site.app.finance_payment_batch')}">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;付款批次&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.financePaymentBatch" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--&lt;!&ndash;pageRoles['EXPENSEVIEW'].action > 0  财务 单据查看 只读/操作 权限&ndash;&gt;-->
+                <!--<li class="sub-menu-item" ng-show="view.finance &&-->
+                                                   <!--!functionProfile['finance.batch.disabled'] &&-->
+                                                   <!--pageRoles['EXPENSEVIEW'].action > 0">-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ui-sref="site.app.financial_global_view"-->
+                       <!--ng-class="{'active': includeState('site.app.financial_global_view')}">-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;单据查看&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.expense_global_view" | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="sub-menu-item" ng-show="view.finance && functionProfile['finance.jinko.passedfee.enabled']">-->
+                    <!--<a class="md-button md-ink-ripple"-->
+                       <!--ng-click="goJinko()"-->
+                    <!--&gt;-->
+                        <!--<div flex layout="row">-->
+                            <!--&lt;!&ndash;过账日期&ndash;&gt;-->
+                            <!--<span class="title">{{"directives.layout.sidenav.passed_fee_date"  | translate}}</span>-->
+                            <!--<span flex></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+
+
+
+            <!--</ul>-->
+        <!--</li>-->
+
+    <!--</ul>-->
+</md-content>

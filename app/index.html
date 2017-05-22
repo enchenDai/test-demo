@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>深兰科技 | 后台管理系统</title>
+    <meta name="description" content="深兰科技后台管理系统"/>
+    <meta name="keywords" content="深兰科技,后台管理系统"/>
+
+    <!--<meta name="viewport" content="width=device-width">-->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.css" />
+    <link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.css" />
+    <link rel="stylesheet" href="bower_components/angular-data-table/release/dataTable.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/froala_editor.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/froala_editor.pkgd.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/froala_style.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/char_counter.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/code_view.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/colors.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/draggable.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/emoticons.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/file.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/fullscreen.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/image_manager.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/image.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/line_breaker.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/quick_insert.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/table.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/video.min.css" />
+    <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+    <link rel="stylesheet" href="bower_components/chosen/chosen.css" />
+    <link rel="stylesheet" href="bower_components/angular-material-datetimepicker/css/material-datetimepicker.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
+    <link rel="stylesheet" href="bower_components/ngGallery/src/css/ngGallery.css" />
+    <link rel="stylesheet" href="bower_components/angular-szn-autocomplete/src/angular-szn-autocomplete.css" />
+    <link rel="stylesheet" href="bower_components/intro.js/introjs.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="DeepBlueAdminWebApp" layout="row" class="deepblue-admin" ng-class="$root.pageClass">
+<div ui-view="main" layout-fill></div>
+
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/messageformat/messageformat.js"></script>
+<script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+<script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+<script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.js"></script>
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<script src="bower_components/angular-material-data-table/dist/md-data-table.js"></script>
+<script src="bower_components/checklist-model/checklist-model.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/angular-data-table/release/dataTable.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/froala_editor.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/froala_editor.pkgd.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/align.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/char_counter.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/code_beautifier.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/code_view.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/colors.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/draggable.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/emoticons.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/entities.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/file.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/font_family.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/font_size.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/fullscreen.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/image.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/image_manager.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/inline_style.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/line_breaker.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/link.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/lists.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/paragraph_format.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/paragraph_style.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/quick_insert.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/quote.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/save.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/table.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/url.min.js"></script>
+<script src="bower_components/froala-wysiwyg-editor/js/plugins/video.min.js"></script>
+<script src="bower_components/codemirror/lib/codemirror.js"></script>
+<script src="bower_components/angular-froala/src/angular-froala.js"></script>
+<script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+<script src="bower_components/chosen/chosen.jquery.js"></script>
+<script src="bower_components/angular-chosen-localytics/dist/angular-chosen.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-material-datetimepicker/js/angular-material-datetimepicker.js"></script>
+<script src="bower_components/angular-ui-router-anim-in-out/anim-in-out.js"></script>
+<script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+<script src="bower_components/ngGallery/src/js/ngGallery.js"></script>
+<script src="bower_components/Sortable/Sortable.js"></script>
+<script src="bower_components/Sortable/ng-sortable.js"></script>
+<script src="bower_components/reconnectingWebsocket/reconnecting-websocket.js"></script>
+<script src="bower_components/angular-szn-autocomplete/src/angular-szn-autocomplete.js"></script>
+<script src="bower_components/SHA-1/sha1.js"></script>
+<script src="bower_components/angulartics/src/angulartics.js"></script>
+<script src="bower_components/angulartics-piwik/dist/angulartics-piwik.min.js"></script>
+<script src="bower_components/angulartics-piwik/dist/piwik.js"></script>
+<script src="bower_components/raven-js/dist/raven.js"></script>
+<script src="bower_components/intro.js/intro.js"></script>
+<script src="bower_components/angular-intro.js/src/angular-intro.js"></script>
+<script src="bower_components/pinyin/pinyin_dict_firstletter.js"></script>
+<script src="bower_components/pinyin/pinyin_dict_notone.js"></script>
+<script src="bower_components/pinyin/pinyin_dict_polyphone.js"></script>
+<script src="bower_components/pinyin/pinyin_dict_withtone.js"></script>
+<script src="bower_components/pinyin/pinyinUtil.js"></script>
+<script src="bower_components/nzh/nzh.js"></script>
+<!-- endbower -->
+
+<!-- endbuild -->
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/constants.js"></script>
+
+<!-- start configuraiton -->
+<script src="scripts/config/localstorage.config.js"></script>
+<script src="scripts/config/translation.config.js"></script>
+<!-- end configuraiton -->
+
+<!--start infrastructure-->
+<script src="scripts/components/layout/main.js"></script>
+<script src="scripts/components/layout/top.nav.controller.js"></script>
+<script src="scripts/components/layout/sidenav.js"></script>
+<!--end infrastructure-->
+
+<!--start components-->
+<script src="scripts/components/popup/popup.js"></script>
+<script src="scripts/components/table/table.js"></script>
+<script src="scripts/components/sidemenu/sidemenu.js"></script>
+<script src="scripts/components/treeview/treeview.js"></script>
+<script src="scripts/components/directives/pagination.directive.js"></script>
+<script src="scripts/components/directives/money.input.js"></script>
+<script src="scripts/components/filter/date.filter.js"></script>
+<script src="scripts/components/directives/upload.picture.js"></script>
+<script src="scripts/components/directives/number.input.js"></script>
+<!--end components-->
+
+<!--start services-->
+<script src="scripts/services/auth/provider/auth.oauth2.service.js"></script>
+<script src="scripts/services/auth/principal.service.js"></script>
+<script src="scripts/services/auth/auth.service.js"></script>
+<script src="scripts/services/auth/authority.directive.js"></script>
+<script src="scripts/services/auth/services/account.service.js"></script>
+<script src="scripts/services/auth/services/activate.service.js"></script>
+<script src="scripts/services/auth/services/password.service.js"></script>
+<script src="scripts/services/auth/services/register.service.js"></script>
+<script src="scripts/services/util/base64.service.js"></script>
+<script src="scripts/services/util/FileSaver.js"></script>
+<script src="scripts/services/interceptor/auth.interceptor.js"></script>
+<script src="scripts/services/util/parse-links.service.js"></script>
+<script src="scripts/services/date.filter.js"></script>
+<script src="scripts/services/util/recursive.helper.util.js"></script>
+<!--end services-->
+
+<!--start biz-->
+<script src="scripts/app/login/login.js"></script>
+<script src="scripts/app/dashboard/dashboard.js"></script>
+<!--end biz-->
+<!-- endbuild -->
+
+<!-- 不要改app.constants.js的位置 这是在server上拷贝的-->
+<script src="scripts/app.constants.js"></script>
+
+
+</body>
+</html>

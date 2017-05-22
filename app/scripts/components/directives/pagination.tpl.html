@@ -1,0 +1,25 @@
+<div layout="row" class="pagination" ng-show="totalRecordCount > 0">
+    <md-button ng-disabled="currentPage === 0" ng-click="goToPage(0)" class="fist-page-link">
+        <!--首页-->
+        {{"pagenation.firstPage" | translate}}
+    </md-button>
+    <!--上一页-->
+    <md-button ng-disabled="currentPage === 0" ng-click="goToPage(currentPage - 1)" aria-label="{{'pagenation.previousPage' | translate}}" class="previous-page-link">
+        <i class="zmdi zmdi-chevron-left"></i>
+    </md-button>
+    <span ng-show="currentPage > maxShowPages / 2 && totalPages() > maxShowPages">...</span>
+    <div ng-repeat="index in getShowPages()" class="page-button">
+        <md-button ng-click="goToPage(index)" class="page" ng-class="{ 'active': currentPage === index}" ng-disabled="currentPage === index">
+            {{index+1}}
+        </md-button>
+    </div>
+    <span ng-show="currentPage <= totalPages() - (maxShowPages / 2) && totalPages()> maxShowPages">...</span>
+    <!--下一页-->
+    <md-button ng-disabled="currentPage === totalPages() - 1" ng-click="goToPage(currentPage + 1)" aria-label="{{'pagenation.nextPage' | translate}}" class="next-page-link">
+        <i class="zmdi zmdi-chevron-right"></i>
+    </md-button>
+    <md-button ng-disabled="currentPage === totalPages() - 1" ng-click="goToPage(totalPages() - 1)" class="last-page-link">
+        <!--末页-->
+        {{"pagenation.lastPage" | translate}}
+    </md-button>
+</div>
